@@ -6,6 +6,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import MapScreen from './screens/ScreenMapa'
 import LoginScreen from './screens/LoginScreen'
 import CuentaScreen from './screens/ScreenCuenta'
+import PreferenciasScreen from './screens/ScreenPreferencias'
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
 
@@ -31,6 +32,7 @@ export default class App extends Component {
 // })
 
 const Drawer = createDrawerNavigator ({
+  Preferencias: {screen: PreferenciasScreen},
   LogIn: {screen: LoginScreen},
   Inicio: {screen: MapScreen},
   Cuenta: {screen: CuentaScreen},

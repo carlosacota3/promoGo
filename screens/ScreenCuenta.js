@@ -1,8 +1,60 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
 import { Avatar, Header, Icon } from 'react-native-elements';
+import * as GoogleSignIn from 'expo-google-sign-in';
 
 class ScreenCuenta extends Component {
+
+  state = { user: null };
+
+  // componentDidMount() {
+  //   this.initAsync();
+  // }
+  //Inicio de sesion con IOS (creo xd)
+  // initAsync = async () => {
+  //   await GoogleSignIn.initAsync({
+  //     clientId: '712490136755-jg2bh3e74sd8030kapnsnuiv9u3aa47l.apps.googleusercontent.com',
+  //   });
+  //   this._syncUserWithStateAsync();
+  // };
+
+  _syncUserWithStateAsync = async () => {
+    const user = await GoogleSignIn.signInSilentlyAsync();
+    this.setState({ user });
+    alert(this.state.user.uid);
+    alert(this.state.user.email);
+    alert(this.state.user.displayName);
+    alert(this.state.user.photoURL);
+    alert(this.state.user.firstName);
+    alert(this.state.user.lastName);
+  };
+
+  signOutAsync = async () => {
+    await GoogleSignIn.signOutAsync();
+    this.setState({ user: null });
+  };
+
+  signInAsync = async () => {
+    try {
+      await GoogleSignIn.askForPlayServicesAsync();
+      const { type, user } = await GoogleSignIn.signInAsync();
+      if (type === 'success') {
+        this._syncUserWithStateAsync();
+      }
+    } catch ({ message }) {
+      alert('login: Error:' + message);
+      console.log(message);
+    }
+  };
+
+  onPress = () => {
+    if (this.state.user) {
+      this.signOutAsync();
+    } else {
+      this.signInAsync();
+    }
+  };
+
   render(){
     return (
       <View>
@@ -19,6 +71,7 @@ class ScreenCuenta extends Component {
             title={'Mi nombre'}
             containerStyle={styles.avatar}
           />
+          <Text style={{margin: 30}} onPress={this.onPress}>Toggle Auth</Text>
       </View>
     );
   }

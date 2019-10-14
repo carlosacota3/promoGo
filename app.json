@@ -33,7 +33,15 @@
     },
 	"android": {
     "package": "com.android.promogo",
-    "googleServicesFile": "./google-services.json"
+    "googleServicesFile": "./google-services.json",
+    "config": {
+      "googleSignIn": {
+        "certificateHash": "2F:41:48:3B:3B:F4:EB:AC:E1:BF:59:E1:6F:6D:B6:BA:9D:D4:50:A3"
+      },
+      "googleMaps": {
+        "apiKey": "AIzaSyCbl9lHWbNHUmgKNth1MGghAh2yYUgS4Iw"
+      }
+    }
 	}
   }
 }

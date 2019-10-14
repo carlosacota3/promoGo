@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://gb-w7j.carlosacota3.taxi-client.exp.direct",
+  "packagerNgrokUrl": "https://packager.gb-w7j.carlosacota3.taxi-client.exp.direct",
+  "ngrokPid": 15448,
   "expoServerPort": 19000,
   "webpackServerPort": null,
   "packagerPort": 19001,
-  "packagerPid": 6988,
+  "packagerPid": 9100,
   "devToolsPort": 19002
 }
