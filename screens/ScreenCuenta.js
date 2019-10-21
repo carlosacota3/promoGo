@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
 import { Avatar, Header, Icon } from 'react-native-elements';
 import * as GoogleSignIn from 'expo-google-sign-in';
+import { gray } from 'ansi-colors';
 
 class ScreenCuenta extends Component {
 
-  state = { user: null };
+  state = { user:{
+      uid: '',
+      email: '',
+      displayName: '',
+      photoURL: 'https://cdn.icon-icons.com/icons2/1769/PNG/512/4092564-about-mobile-ui-profile-ui-user-website_114033.png',
+      firstName: '',
+      lastName: '',
+  } };
 
   // componentDidMount() {
   //   this.initAsync();
@@ -48,10 +56,10 @@ class ScreenCuenta extends Component {
   };
 
   onPress = () => {
-    if (this.state.user) {
-      this.signOutAsync();
-    } else {
+    if (this.state.user.uid === '') {
       this.signInAsync();
+    } else {
+      this.signOutAsync();
     }
   };
 
@@ -65,13 +73,21 @@ class ScreenCuenta extends Component {
             // rightComponent={{ icon: 'home', color: '#fff' }}
         />
           <Avatar 
-            rounded 
-            size={130} 
-            source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',}} 
+            rounded
+            size={130}
+            source={{ uri: this.state.user.photoURL,}} 
             title={'Mi nombre'}
             containerStyle={styles.avatar}
           />
-          <Text style={{margin: 30}} onPress={this.onPress}>Toggle Auth</Text>
+          <Text style={{margin: 30}} onPress={this.onPress}>{this.state.user.uid === '' ? 'Iniciar Sesión' : 'Cerrar Sesión'}</Text>
+          <View style={styles.margen_info}>
+            <Text style={styles.title}>Nombre</Text>
+            <Text style={styles.info}>{this.state.firstName === '' ? '' : this.state.firstName}</Text>
+            <Text style={styles.title}>Apellido</Text>
+            <Text style={styles.info}>{this.state.lastName === '' ? '' : this.state.lastName}</Text>
+            <Text style={styles.title}>Correo Electronico</Text>
+            <Text style={styles.info}>{this.state.email === '' ? '' : this.state.email}</Text>
+          </View>
       </View>
     );
   }
@@ -91,5 +107,20 @@ const styles = StyleSheet.create({
     avatar: {
         marginLeft: '4%', 
         marginTop: '6%'
+    },
+    margen_info: {
+      margin: 6,
+      padding: 5,
+      borderRadius: 4,
+      borderWidth: 1,
+      borderColor: '#d6d7da',
+    },
+    title: {
+      color: '#9c9c9c',
+      fontSize: 16,
+      marginTop: 8,
+    },
+    info: {
+      marginBottom: 8,
     }
 })

@@ -16,7 +16,7 @@ class ScreenPreferencias extends Component {
   almacenarPrimeraVez() {
     //Comida
     AsyncStorage.setItem('pizza', 'false', (err) => { console.log(err); });
-    AsyncStorage.setItem('hamburgesa', 'false', (err) => { console.log(err); });
+    AsyncStorage.setItem('hamburguesa', 'false', (err) => { console.log(err); });
     AsyncStorage.setItem('nachos', 'false', (err) => { console.log(err); });
     AsyncStorage.setItem('boneless', 'false', (err) => { console.log(err); });
     AsyncStorage.setItem('hotdogs', 'false', (err) => { console.log(err); });
@@ -61,7 +61,7 @@ class ScreenPreferencias extends Component {
   //Carga los datos almacenados en el celular, a los checkboxs
   cargarDatos() {
     AsyncStorage.getItem('pizza', (err, result) => {if (result === 'true'){ this.setState({ch_pizza: true})} else { this.setState({ch_pizza: false})}});
-    AsyncStorage.getItem('hamburgesa', (err, result) => {{result === 'true' ? this.setState({ch_hamburgesa: true}) : this.setState({ch_hamburgesa: false})}});
+    AsyncStorage.getItem('hamburguesa', (err, result) => {{result === 'true' ? this.setState({ch_hamburguesa: true}) : this.setState({ch_hamburguesa: false})}});
     AsyncStorage.getItem('nachos', (err, result) => {{result === 'true' ? this.setState({ch_nachos: true}) : this.setState({ch_nachos: false})}});
     AsyncStorage.getItem('boneless', (err, result) => {{result === 'true' ? this.setState({ch_boneless: true}) : this.setState({ch_boneless: false})}});
     AsyncStorage.getItem('hotdogs', (err, result) => {{result === 'true' ? this.setState({ch_hotdogs: true}) : this.setState({ch_hotdogs: false})}});
@@ -70,39 +70,38 @@ class ScreenPreferencias extends Component {
     AsyncStorage.getItem('alcohol', (err, result) => {{result === 'true' ? this.setState({ch_alcohol: true}) : this.setState({ch_alcohol: false})}});
     AsyncStorage.getItem('snacks', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
     
-    AsyncStorage.getItem('camisa', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('pantalones', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('vestidos', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('calzado', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('accesorios', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
+    AsyncStorage.getItem('camisa', (err, result) => {{result === 'true' ? this.setState({ch_camisa: true}) : this.setState({ch_camisa: false})}});
+    AsyncStorage.getItem('pantalones', (err, result) => {{result === 'true' ? this.setState({ch_pantalones: true}) : this.setState({ch_pantalones: false})}});
+    AsyncStorage.getItem('vestidos', (err, result) => {{result === 'true' ? this.setState({ch_vestidos: true}) : this.setState({ch_vestidos: false})}});
+    AsyncStorage.getItem('calzado', (err, result) => {{result === 'true' ? this.setState({ch_calzado: true}) : this.setState({ch_calzado: false})}});
+    AsyncStorage.getItem('accesorios', (err, result) => {{result === 'true' ? this.setState({ch_accesorios: true}) : this.setState({ch_accesorios: false})}});
     
-    AsyncStorage.getItem('shampoo', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('jabon', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('perfume', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('gel', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('antitranspirante', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
+    AsyncStorage.getItem('shampoo', (err, result) => {{result === 'true' ? this.setState({ch_shampoo: true}) : this.setState({ch_shampoo: false})}});
+    AsyncStorage.getItem('jabon', (err, result) => {{result === 'true' ? this.setState({ch_jabon: true}) : this.setState({ch_jabon: false})}});
+    AsyncStorage.getItem('perfume', (err, result) => {{result === 'true' ? this.setState({ch_perfume: true}) : this.setState({ch_perfume: false})}});
+    AsyncStorage.getItem('gel', (err, result) => {{result === 'true' ? this.setState({ch_gel: true}) : this.setState({ch_gel: false})}});
+    AsyncStorage.getItem('antitranspirante', (err, result) => {{result === 'true' ? this.setState({ch_antitranspirante: true}) : this.setState({ch_antitranspirante: false})}});
     
-    AsyncStorage.getItem('celulares', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('tablets', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('tv', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('computadoras', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('impresoras', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
+    AsyncStorage.getItem('celulares', (err, result) => {{result === 'true' ? this.setState({ch_celulares: true}) : this.setState({ch_celulares: false})}});
+    AsyncStorage.getItem('tablets', (err, result) => {{result === 'true' ? this.setState({ch_tablet: true}) : this.setState({ch_tablet: false})}});
+    AsyncStorage.getItem('tv', (err, result) => {{result === 'true' ? this.setState({ch_tv: true}) : this.setState({ch_tv: false})}});
+    AsyncStorage.getItem('computadoras', (err, result) => {{result === 'true' ? this.setState({ch_computadoras: true}) : this.setState({ch_computadoras: false})}});
+    AsyncStorage.getItem('impresoras', (err, result) => {{result === 'true' ? this.setState({ch_impresoras: true}) : this.setState({ch_impresoras: false})}});
     
-    AsyncStorage.getItem('estufas', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('lavadoras', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('secadoras', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('licuadoras', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('microondas', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
+    AsyncStorage.getItem('estufas', (err, result) => {{result === 'true' ? this.setState({ch_estufas: true}) : this.setState({ch_estufas: false})}});
+    AsyncStorage.getItem('lavadoras', (err, result) => {{result === 'true' ? this.setState({ch_lavadoras: true}) : this.setState({ch_lavadoras: false})}});
+    AsyncStorage.getItem('secadoras', (err, result) => {{result === 'true' ? this.setState({ch_secadoras: true}) : this.setState({ch_secadoras: false})}});
+    AsyncStorage.getItem('licuadoras', (err, result) => {{result === 'true' ? this.setState({ch_licuadoras: true}) : this.setState({ch_licuadoras: false})}});
+    AsyncStorage.getItem('microondas', (err, result) => {{result === 'true' ? this.setState({ch_microondas: true}) : this.setState({ch_microondas: false})}});
     
-    AsyncStorage.getItem('llantas', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('aceite', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
-    AsyncStorage.getItem('acc_limpieza', (err, result) => {{result === 'true' ? this.setState({ch_snacks: true}) : this.setState({ch_snacks: false})}});
+    AsyncStorage.getItem('llantas', (err, result) => {{result === 'true' ? this.setState({ch_llantas: true}) : this.setState({ch_llantas: false})}});
+    AsyncStorage.getItem('aceite', (err, result) => {{result === 'true' ? this.setState({ch_aceite: true}) : this.setState({ch_aceite: false})}});
+    AsyncStorage.getItem('acc_limpieza', (err, result) => {{result === 'true' ? this.setState({ch_acc_limpieza: true}) : this.setState({ch_acc_limpieza: false})}});
 
   }
 
   //Se ejecuta cada vez que se cambie un checkbox para actualizar su info de estado en el local storage
   cambioChecked(titulo, estado) {
-    console.log(estado.toString());
     AsyncStorage.setItem(titulo, estado.toString(), (err) => { if (err !== null) { alert(err) } });
   }
 

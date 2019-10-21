@@ -3,4 +3,4 @@
 /screens/ScreenMap.js
 /screens/ScreenViaje.js
 /node_modules
-.apk
+*.apk

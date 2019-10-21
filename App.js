@@ -32,10 +32,10 @@ export default class App extends Component {
 // })
 
 const Drawer = createDrawerNavigator ({
+  Cuenta: {screen: CuentaScreen},
   Preferencias: {screen: PreferenciasScreen},
   LogIn: {screen: LoginScreen},
   Inicio: {screen: MapScreen},
-  Cuenta: {screen: CuentaScreen},
   // Configuracion: {xcreen: ConfiguracionScreen},
   // Stack: {screen: Stack},
   // Mapa: {screen: Mapa},
